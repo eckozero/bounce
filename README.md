@@ -1,10 +1,9 @@
 Bounce!
-======+
+======
 
 A silly test-your-reactions style game written in Python
 
-
-![Bounce!](http://s27.postimg.org/xmvbg0n2r/Screenshot.jpg)
+![Bounce!](http://s13.postimg.org/s61oo047b/Screenshot.jpg)
 
 
 How To Run

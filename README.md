@@ -26,4 +26,5 @@ Simple enough. Press the space bar when the white line is between the two
 red lines.
 
 You'll hear a ding if you got it right, or a buzzer if you got it wrong.
-Don't let the bar bounce on the top and the bottom, otherwise you lose.
+Don't let the bar bounce on the top and the bottom if your score is higher 
+than one, otherwise you lose.

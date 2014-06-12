@@ -8,6 +8,8 @@ pygame.init()
 fpsClock = pygame.time.Clock()
 pygame.display.set_caption("Bounce!")
 
+mousex, mousey = 0, 0
+
 # Window should be rectangular and tall for line to bounce up and
 # down in
 window = pygame.display.set_mode((380,700))
@@ -20,22 +22,23 @@ BLACK = (  0,   0,   0)
 RED   = (255,   0,   0)
 
 
-#start = True
-#spacebar_pressed = False
-
 score = 0
 bounce = 0
 
 # Controls location of bar on screen
 x = 640
 # Use this to keep bar moving up and down
+# Amend this variable to change speed
 x_change = 10
 
 
 # Rules for the red rectangle
-
+# Generate random point, then add two red lines for marker
+# These variables are actually named upside down but that's not
+# important
 rect_top = random.randint(40, 660)
 rect_bottom = rect_top - 30
+
 
 #Two different sounds - a ding for if you hit space bar at correct
 #time, a buzz for incorrect timing
@@ -59,23 +62,39 @@ def playGame(playing, score):
 				sys.exit()
 		
 			if event.type == KEYDOWN:
+				# Pressed space bar
 				if event.key == K_SPACE:
+					# Is the white line between the red ones?
+					if (x - 5) <= rect_top and (x + 5) >= rect_bottom:
+					# Yes. Play the sound, add one to the score
+						ding.play()
+						score +=1
+					# Red lines need to be reinitialised
+						rect_top = random.randint(40, 660)
+						rect_bottom = rect_top - 30
+					else:
+					# No. white line not between red ones
+					# Play the buzz and go to gameover
+						buzz.play()
+						playing = False
+						
+					# Reagrdless of yes or no, bounce counter must be
+					# reset here
+					bounce = 0
+			# As above, but with mouse click instead of spacebar press
+			elif event.type == MOUSEBUTTONDOWN:
+				if event.button in (1,2,3):
 					if (x - 5) <= rect_top and (x + 5) >= rect_bottom:
 						ding.play()
 						score +=1
 						rect_top = random.randint(40, 660)
 						rect_bottom = rect_top - 30
-						bounce = 0
 					else:
 						buzz.play()
-						bounce = 0
 						playing = False
+					bounce = 0
 			
-		if x > 650:
-			x_change *= -1
-			bounce += 1
-
-		elif x < 1:
+		if x > 650 or x < 1:
 			x_change *= -1
 			bounce += 1
 

@@ -2,6 +2,7 @@ Bounce!
 ======
 
 A silly test-your-reactions style game written in Python
+(Proof of concept prototype)
 
 ![Bounce!](http://s13.postimg.org/s61oo047b/Screenshot.jpg)
 
@@ -31,8 +32,8 @@ Execute the `bounce.py` file and start playing
 
 ###How To Play
 
-Simple enough. Press the space bar when the white line is between the two 
-red lines.
+Simple enough. Press the space bar or click the mouse when the white line is 
+between the two red lines.
 
 You'll hear a ding if you got it right, or a buzzer if you got it wrong.
 Don't let the bar bounce on the top and the bottom if your score is higher 

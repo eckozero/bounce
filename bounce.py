@@ -105,7 +105,7 @@ def playGame(playing, score):
 	
 	
 		x += x_change
-		
+
 	# Scores and mandatory updates
 		text = font.render("Score: " + str(score), True, WHITE)
 		window.blit(text, (10, 660))
@@ -124,9 +124,9 @@ def gameOver(playing, score):
 	window.blit(tweetButton, (30, 450))
 	
 	
-	window.blit(gameOverText, (30, 10))
-	window.blit(displayScore, (30, 100))
-	window.blit(queryText, (30, 300))
+	window.blit(gameOverText, (30, 200))
+	window.blit(displayScore, (20, 250))
+	window.blit(queryText, (30, 400))
 	
 	pygame.display.update()
 	fpsClock.tick(30)

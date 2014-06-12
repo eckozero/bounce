@@ -6,8 +6,18 @@ A silly test-your-reactions style game written in Python
 ![Bounce!](http://s13.postimg.org/s61oo047b/Screenshot.jpg)
 
 
-How To Run
------------
+###Requirements
+
+You'll need pygame for this. On *buntu, you can get this by running
+
+```bash
+sudo apt-get install python-pygame
+```
+
+On Windows you can download an executable from the [Pygame website](http://www.pygame.org)
+
+
+###How To Run
 
 Standard stuff. Download all the files inot a single directory and make the
 py file executable with 
@@ -16,11 +26,10 @@ py file executable with
 chmod +x
 ```
 
-Execute the **bounce.py** file and start playing
+Execute the `bounce.py` file and start playing
 
 
-How To Play
------------
+###How To Play
 
 Simple enough. Press the space bar when the white line is between the two 
 red lines.

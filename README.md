@@ -19,7 +19,7 @@ On Windows you can download an executable from the [Pygame website](http://www.p
 
 ###How To Run
 
-Standard stuff. Download all the files inot a single directory and make the
+Standard stuff. Download all the files into a single directory and make the
 py file executable with 
 
 ```bash

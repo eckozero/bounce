@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import pygame, sys, random
+import pygame, sys, random, webbrowser
 from pygame.locals import *
 
 pygame.init()
@@ -100,10 +100,15 @@ def gameOver(playing, score):
 	gameOverText = gOFont.render("Game Over!", True, BLACK)
 	displayScore = gOFont.render("You scored " + str(score), True, BLACK)
 	queryText = font.render("Play again? Y/N", True, RED)
+	
+	tweetButton = font.render("Tweet your score (press T)", True, RED)
+	window.blit(tweetButton, (30, 450))
+	
+	
 	window.blit(gameOverText, (30, 10))
 	window.blit(displayScore, (30, 100))
 	window.blit(queryText, (30, 300))
-
+	
 	pygame.display.update()
 	fpsClock.tick(30)
 	while playing == False:
@@ -116,5 +121,10 @@ def gameOver(playing, score):
 				elif event.key == K_n:
 					pygame.quit()
 					sys.exit()
+				elif event.key == K_t:
+					message = "I%20scored%20" + str(score) + "%20on%20@KentGeek's%20game,%20Bounce.%20Can%20you%20beat%20me?%20https://github.com/eckozero/bounce"
+					webbrowser.open("https://twitter.com/intent/tweet?button_hashtag=Bounce&text="+message, new=1, autoraise=True)
+
 					
 playGame(playing, score)
+

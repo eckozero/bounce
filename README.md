@@ -23,7 +23,7 @@ Standard stuff. Download all the files into a single directory and make the
 py file executable with 
 
 ```bash
-chmod +x
+chmod +x bounce.py
 ```
 
 Execute the `bounce.py` file and start playing

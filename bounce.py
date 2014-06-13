@@ -8,8 +8,6 @@ pygame.init()
 fpsClock = pygame.time.Clock()
 pygame.display.set_caption("Bounce!")
 
-mousex, mousey = 0, 0
-
 # Window should be rectangular and tall for line to bounce up and
 # down in
 window = pygame.display.set_mode((380,700))
@@ -83,6 +81,7 @@ def playGame(playing, score):
 					bounce = 0
 			# As above, but with mouse click instead of spacebar press
 			elif event.type == MOUSEBUTTONDOWN:
+				# Left, right or middle click is acceptable
 				if event.button in (1,2,3):
 					if (x - 5) <= rect_top and (x + 5) >= rect_bottom:
 						ding.play()
@@ -103,8 +102,9 @@ def playGame(playing, score):
 			bounce = 0
 			playing = False
 	
-	
-		x += x_change
+		# bar starts near the bottom of the screen and should go up
+		# from the off. This means reducing the X value hence minus
+		x -= x_change
 
 	# Scores and mandatory updates
 		text = font.render("Score: " + str(score), True, WHITE)

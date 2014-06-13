@@ -83,6 +83,7 @@ def playGame(playing, score):
 			elif event.type == MOUSEBUTTONDOWN:
 				# Left, right or middle click is acceptable
 				if event.button in (1,2,3):
+					# Modify X by 5 pixels to allow for the bars
 					if (x - 5) <= rect_top and (x + 5) >= rect_bottom:
 						ding.play()
 						score +=1

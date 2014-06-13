@@ -1,7 +1,7 @@
 Bounce!
 ======
 
-A silly test-your-reactions style game written in Python
+A silly test-your-reactions style game written in Python 
 (Proof of concept prototype)
 
 ![Bounce!](http://s13.postimg.org/s61oo047b/Screenshot.jpg)
